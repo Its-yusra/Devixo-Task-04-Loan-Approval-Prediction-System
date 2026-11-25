@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 import os
-from outlier_copper import OutlierCapper
+from outlier_capper import OutlierCapper
 
 # Page configuration
 st.set_page_config(
