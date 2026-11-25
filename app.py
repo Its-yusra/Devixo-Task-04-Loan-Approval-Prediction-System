@@ -4,7 +4,9 @@ import pandas as pd
 import joblib
 import os
 from outlier_capper import OutlierCapper
-
+from outlier_copper import OutlierCapper
+import __main__
+__main__.OutlierCapper = OutlierCapper
 # Page configuration
 st.set_page_config(
     page_title="Loan Approval Prediction System",
