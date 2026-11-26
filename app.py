@@ -4,11 +4,11 @@ import pandas as pd
 import joblib
 import os
 
-# Import custom transformer used during model training
-from outlier_copper import OutlierCapper
+# Import custom transformer
+from outlier_capper import OutlierCapper
 import __main__
 
-# Make custom transformer available to Joblib
+# Make transformer available to Joblib
 __main__.OutlierCapper = OutlierCapper
 
 
@@ -44,9 +44,8 @@ st.write(
 
 if not os.path.exists(MODEL_PATH):
     st.error(
-        "Trained model not found. "
-        "Please upload best_loan_model.joblib "
-        "inside the models folder."
+        "Trained model not found. Please upload "
+        "best_loan_model.joblib inside the models folder."
     )
     st.stop()
 
@@ -177,11 +176,8 @@ if submitted:
         st.subheader("Prediction Result")
 
         if prediction == 1:
-
             st.success("Loan Status: Approved")
-
         else:
-
             st.error("Loan Status: Not Approved")
 
         st.write(
@@ -203,5 +199,4 @@ if submitted:
         )
 
     except Exception as e:
-
         st.error(f"Prediction failed: {e}")
